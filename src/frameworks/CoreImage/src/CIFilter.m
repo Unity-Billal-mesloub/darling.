@@ -29,8 +29,33 @@ NSString * const kCIInputContrastKey = @"inputContrast";
 NSString * const kCIInputExtentKey = @"inputExtent";
 NSString * const kCIInputImageKey = @"inputImage";
 NSString * const kCIInputSaturationKey = @"inputSaturation";
+NSString *const kCIInputRadiusKey = @"inputRadius";
 NSString * const kCIOutputImageKey = @"outputImage";
 NSString * const kCIApplyOptionDefinition = @"definition";
+
+NSString * const kCIAttributeClass = @"class";
+NSString * const kCIAttributeDisplayName = @"displayName";
+NSString * const kCIAttributeFilterDisplayName = @"filterDisplayName";
+NSString * const kCIAttributeFilterName = @"filterName";
+NSString * const kCIAttributeMax = @"max";
+NSString * const kCIAttributeMin = @"min";
+NSString * const kCIAttributeType = @"type";
+
+NSString * const kCIAttributeTypeAngle = @"angle";
+NSString * const kCIAttributeTypeBoolean = @"boolean";
+NSString * const kCIAttributeTypeDistance = @"distance";
+NSString * const kCIAttributeTypeOffset = @"offset";
+NSString * const kCIAttributeTypePosition = @"position";
+NSString * const kCIAttributeTypePosition3 = @"position3";
+NSString * const kCIAttributeTypeRectangle = @"rectangle";
+NSString * const kCIAttributeTypeScalar = @"scalar";
+NSString * const kCIAttributeTypeTime = @"time";
+
+NSString * const kCICategoryCompositeOperation = @"kCICategoryCompositeOperation";
+NSString * const kCICategoryGenerator = @"kCICategoryGenerator";
+NSString * const kCICategoryGradient = @"kCICategoryGradient";
+NSString * const kCICategoryReduction = @"kCICategoryReduction";
+NSString * const kCICategoryTransition = @"kCICategoryTransition";
 
 @implementation CIFilter
 

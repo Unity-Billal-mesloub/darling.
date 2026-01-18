@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.13)
+
 SET(CMAKE_SYSTEM_NAME Linux)
 SET(CMAKE_SYSTEM_PROCESSOR "x86-64")
 
@@ -12,6 +14,9 @@ if (NOT DEFINED CMAKE_C_COMPILER)
 		"clang-10"
 		"clang-11"
 		"clang-12"
+		"clang-13"
+		"clang-14"
+		"clang-15"
 )
 endif(NOT DEFINED CMAKE_C_COMPILER)
 
@@ -25,6 +30,9 @@ if (NOT DEFINED CMAKE_CXX_COMPILER)
 		"clang++-10"
 		"clang++-11"
 		"clang++-12"
+		"clang++-13"
+		"clang++-14"
+		"clang++-15"
 )
 endif(NOT DEFINED CMAKE_CXX_COMPILER)
 
@@ -43,18 +51,22 @@ set(CMAKE_OSX_DEPLOYMENT_TARGET 11.0 CACHE STRING "The version of macOS we're si
 
 project(darling)
 
-cmake_minimum_required(VERSION 3.10)
 enable_language(ASM)
 
 set(CMAKE_INSTALL_DEFAULT_COMPONENT_NAME "core")
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+include(clang_version_check)
 include(InstallSymlink)
 include(MacroEnsureOutOfSourceBuild)
 include(dsym)
 include(xcproj)
 include(architecture)
 include(create_symlink)
+
+set(CLANG_RECOMMENDED_MINIMUM_VERSION 11)
+clang_version_check(${CMAKE_C_COMPILER} c ${CLANG_RECOMMENDED_MINIMUM_VERSION})
+clang_version_check(${CMAKE_CXX_COMPILER} cpp ${CLANG_RECOMMENDED_MINIMUM_VERSION})
 
 MACRO_ENSURE_OUT_OF_SOURCE_BUILD()
 

@@ -9,6 +9,21 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 include(mig)
 include(pyc)
 
+# Force linker settings to match 3.30.5 behavior
+# Apple's ld64 in cctools does not support the `--dependency-file` flag
+set(CMAKE_CXX_LINKER_DEPFILE_SUPPORTED FALSE)
+set(CMAKE_C_LINKER_DEPFILE_SUPPORTED FALSE)
+set(CMAKE_CXX_LINK_DEPENDS_USE_LINKER FALSE)
+set(CMAKE_C_LINK_DEPENDS_USE_LINKER FALSE)
+
+set(CMAKE_CXX_LINK_LIBRARY_USING_WHOLE_ARCHIVE_SUPPORTED FALSE)
+set(CMAKE_C_LINK_LIBRARY_USING_WHOLE_ARCHIVE_SUPPORTED FALSE)
+
+set(CMAKE_CXX_LINKER_INFORMATION_LOADED FALSE)
+set(CMAKE_C_LINKER_INFORMATION_LOADED FALSE)
+set(CMAKE_CXX_USE_LINKER_INFORMATION FALSE)
+set(CMAKE_C_USE_LINKER_INFORMATION FALSE)
+
 #
 # start core components
 #
@@ -277,6 +292,7 @@ if (COMPONENT_cli)
 	add_subdirectory(external/lzfse)
 	add_subdirectory(clt)
 	add_subdirectory(diskutil)
+	add_subdirectory(ditto)
 
 	# these aren't used by anything we build (they're just included because they're also present in macOS)
 	# TODO: maybe we should introduce another component (e.g. `lib_stock`) for libraries we don't need but are expected in a stock macOS installation.
@@ -320,6 +336,7 @@ if (COMPONENT_cli OR COMPONENT_dev_gui_common)
 	add_subdirectory(external/libnetwork)
 	add_subdirectory(libMobileGestalt)
 	add_subdirectory(external/MITKerberosShim)
+	add_subdirectory(MobileKeyBag)
 endif()
 
 if (COMPONENT_iokitd)

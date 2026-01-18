@@ -13,10 +13,14 @@ const CFStringRef _kLSCheckInTimeKey = CFSTR("LSCheckInTime");
 const CFStringRef _kLSDisplayNameKey = CFSTR("LSDisplayName");
 const CFStringRef _kLSArchitectureKey = CFSTR("LSArchitecture");
 const CFStringRef _kLSBundlePathKey = CFSTR("LSBundlePath");
+const CFStringRef _kLSPreviousASNKey = CFSTR("LSOtherASN");
+const CFStringRef _kLSBundlePathDeviceIDKey = CFSTR("LSBundlePathDeviceIDKey");
+const CFStringRef _kLSBundlePathINodeKey = CFSTR("LSBundlePatINodeKey");
 
 const CFStringRef _kLSApplicationTypeKey = CFSTR("ApplicationType");
 const CFStringRef _kLSApplicationForegroundTypeKey = CFSTR("Foreground");
 const CFStringRef _kLSApplicationBackgroundOnlyTypeKey = CFSTR("BackgroundOnly");
+const CFStringRef _kLSApplicationUIElementTypeKey = CFSTR("UIElement");
 
 const CFStringRef _kLSExecutableFormatKey = CFSTR("LSExecutableFormat");
 const CFStringRef _kLSExecutableFormatMachOKey = CFSTR("LSExecutableMachOFormat");
@@ -24,12 +28,13 @@ const CFStringRef _kLSExecutableFormatCFMKey = CFSTR("LSExecutableCFMFormat");
 
 const CFStringRef _kLSASNKey = CFSTR("LSASN");
 
+const CFStringRef kLSItemContentType = CFSTR("LSItemContentType");
+
 const CFStringRef kLSSharedFileListFavoriteItems = CFSTR("com.apple.LSSharedFileList.FavoriteItems");
 const CFStringRef kLSSharedFileListFavoriteVolumes = CFSTR("com.apple.LSSharedFileList.FavoriteVolumes");
 const CFStringRef kLSSharedFileListGlobalLoginItems = CFSTR("com.apple.LSSharedFileList.GlobalLoginItems");
 // const LSSharedFileListRef kLSSharedFileListItemBeforeFirst;
 const CFStringRef kLSSharedFileListItemHidden = CFSTR("com.apple.LSSharedFileList.ItemIsHidden");
-// const LSSharedFileListItemRef kLSSharedFileListItemLast;
 const CFStringRef kLSSharedFileListLoginItemHidden = CFSTR("com.apple.loginitem.HideOnLaunch");
 const CFStringRef kLSSharedFileListRecentApplicationItems = CFSTR("com.apple.LSSharedFileList.RecentApplications");
 const CFStringRef kLSSharedFileListRecentDocumentItems = CFSTR("com.apple.LSSharedFileList.RecentDocuments");
@@ -39,6 +44,15 @@ const CFStringRef kLSSharedFileListSessionLoginItems = CFSTR("com.apple.LSShared
 const CFStringRef kLSSharedFileListVolumesComputerVisible = CFSTR("com.apple.LSSharedFileList.FavoriteVolumes.ComputerIsVisible");
 const CFStringRef kLSSharedFileListVolumesIDiskVisible = CFSTR("com.apple.LSSharedFileList.FavoriteVolumes.iDiskIsVisible");
 const CFStringRef kLSSharedFileListVolumesNetworkVisible = CFSTR("com.apple.LSSharedFileList.FavoriteVolumes.NetworkIsVisible");
+
+const CFStringRef kLSQuarantineAgentBundleIdentifierKey = CFSTR("LSQuarantineAgentBundleIdentifier");
+const CFStringRef kLSQuarantineAgentNameKey = CFSTR("LSQuarantineAgentName");
+const CFStringRef kLSQuarantineDataURLKey = CFSTR("LSQuarantineDataURL");
+const CFStringRef kLSQuarantineOriginURLKey = CFSTR("LSQuarantineOriginURL");
+const CFStringRef kLSQuarantineTimeStampKey = CFSTR("LSQuarantineTimeStamp");
+const CFStringRef kLSQuarantineTypeKey = CFSTR("LSQuarantineType");
+const CFStringRef kLSQuarantineTypeOtherDownload = CFSTR("LSQuarantineTypeOtherDownload");
+const CFStringRef kLSQuarantineTypeWebDownload = CFSTR("LSQuarantineTypeWebDownload");
 
 const CFStringRef kUTExportedTypeDeclarationsKey = CFSTR("UTExportedTypeDeclarations");
 const CFStringRef kUTImportedTypeDeclarationsKey = CFSTR("UTImportedTypeDeclarations");
@@ -53,6 +67,8 @@ const CFStringRef kUTTagClassFilenameExtension = CFSTR("public.filename-extensio
 const CFStringRef kUTTagClassMIMEType = CFSTR("public.mime-type");
 const CFStringRef kUTTagClassNSPboardType = CFSTR("com.apple.nspboard-type");
 const CFStringRef kUTTagClassOSType = CFSTR("com.apple.ostype");
+const CFStringRef kUTTagClassDeviceModelCode = CFSTR("com.apple.device-model-code");
+
 const CFStringRef kUTTypeItem = CFSTR("public.item");
 const CFStringRef kUTTypeContent = CFSTR("public.content");
 const CFStringRef kUTTypeCompositeContent = CFSTR("public.composite-content");
@@ -181,4 +197,4 @@ const CFStringRef kUTTypePKCS12 = CFSTR("com.rsa.pkcs-12");
 const CFStringRef kUTTypeX509Certificate = CFSTR("public.x509-certificate");
 const CFStringRef kUTTypeElectronicPublication = CFSTR("org.idpf.epub-container");
 const CFStringRef kUTTypeLog = CFSTR("public.log");
-
+const CFStringRef kUTTypeDevice = CFSTR("public.device");
